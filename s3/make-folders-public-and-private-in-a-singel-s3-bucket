@@ -1,0 +1,22 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": [
+                "arn:aws:s3:::s3-bucket-name/public-folder-name1/*",
+                "arn:aws:s3:::s3-bucket-name/public-folder-name2/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::4545654650224455:user/iamuser"
+            },
+            "Action": "s3:GetObject",
+            "NotResource": "arn:aws:s3:::s3-bucket-name/private-folder-name/*"
+        }
+    ]
+}
